@@ -1,17 +1,3 @@
-//Copyright (C) 2023 ading2210
-//see README.md for more information
-
-//this script launches the popup and contains handlers for canvas/schoology
-
-const gpl_text = `ading2210/edpuzzle-answers: a Javascript bookmarklet that provides many useful utilities for Edpuzzle
-Copyright (C) 2023 ading2210
-
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License along with this program.If not, see <https://www.gnu.org/licenses/>.`;
-
 function http_get(url, callback, headers=[], method="GET", content=null) {
   var request = new XMLHttpRequest();
   request.addEventListener("load", callback);
@@ -38,7 +24,6 @@ function format_text(text, replacements) {
 }
 
 function init() {
-  console.info(gpl_text);
 
   //support running from within ultraviolet
   window.real_location = window.location;
@@ -86,7 +71,6 @@ function open_popup() {
 function write_popup(popup, html) {
   popup.document.base_url = base_url;
   popup.document.edpuzzle_data = window.__EDPUZZLE_DATA__;
-  popup.document.gpl_text = gpl_text;
   popup.document.write(html);
 
   let create_element = function(tag, innerHTML) {
