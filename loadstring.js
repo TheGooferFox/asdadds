@@ -17,7 +17,7 @@
 //this script mainly just serves to load the rest of the program
 
 var mirrors = [
-  "https://raw.githubusercontent.com/TheGooferFox/asdadds/"
+  "https://raw.githubusercontent.com/TheGooferFox/asdadds/main/"
 ];
 
 async function try_mirror(mirror) {
