@@ -73,7 +73,7 @@ function open_popup() {
   write_popup(popup, this.responseText);
   
   function popup_unload() { 
-    http_get(base_url+"/app/html/popup.html", function(){
+    http_get("https://raw.githubusercontent.com/ading2210/edpuzzle-answers/dev/app/html/popup.html", function(){
       if (popup.closed) return;
       write_popup(popup, this.responseText);
       popup.addEventListener("beforeunload", popup_unload);
@@ -109,11 +109,11 @@ function write_popup(popup, html) {
     }, 200)
   });
 
-  http_get(base_url+"/app/css/dist.css", function(){
+  http_get("https://raw.githubusercontent.com/ading2210/edpuzzle-answers/dev/app/css/dist.css", function(){
     create_element("style", this.responseText);
   })
 
-  http_get(base_url+"/app/js/popup.js", function() {
+  http_get(("https://raw.githubusercontent.com/ading2210/edpuzzle-answers/dev/app/js/popup.js", function() {
     create_element("script", this.responseText);
   })
 }
