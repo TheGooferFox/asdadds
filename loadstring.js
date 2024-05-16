@@ -21,7 +21,7 @@ var mirrors = [
 ];
 
 async function try_mirror(mirror) {
-  let r = await fetch(mirror + "/app/main.js");
+  let r = await fetch(mirror + "main.js");
   let script = await r.text();
   window.base_url = mirror;
   eval(script);
